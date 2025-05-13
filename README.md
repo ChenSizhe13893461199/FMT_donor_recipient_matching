@@ -4,7 +4,7 @@
 ![](framework.png)
 
 ### The core mathematical mechanisms of MOZAIC:
-![](principle.png)
+![](principle1.png)
 
 
 ### Requirements
