@@ -2,8 +2,6 @@
 
 ### The framework of MOZAIC:
 ![](framework.png)
-
-### Details of Using MOZAIC
 ### Requirements
 - python 3.9.7 or higher (recommend the version of 3.9.7)
 - keras==2.10.0
