@@ -1,10 +1,7 @@
-# MOZAIC
+# MOZAIC (Microbiota Matching Optimization by Artificial Intelligence)
 
 ### The MOZAIC framework:
 ![](framework.png)
-
-### The core mathematical mechanisms of MOZAIC:
-![](principle1.png)
 
 
 ### Requirements
@@ -26,6 +23,12 @@
 **2.** Prepare the necessary datasets (independent training, validation, and test datasets), which have been deposited in .npy files. In detail, files including "donor_training.npy", "recipient_training.npy", "donor_validation.npy", "recipient_validation.npy", "donor_testing.npy", and "recipient_testing.npy" have all been submitted to GitHub for convenience.
 
 **3.** Following the codes provided in "MOZAIC.py" and running it in your local Spyder or other suitable environment directly, the training of AMPLiT will be smoothly performed.
+
+MOZAIC integrates five densely interconnected neural computational blocks, activation modules, filter layers, and multi-layer perceptrons. Its upstream computational blocks extract parallel featural characteristics from donor and recipient features, while downstream layers identify intrinsic complementary patterns within donor-recipient pairs. By prioritizing interconnective patterns between paired donor-recipient metagenomes over isolated features, MOZAIC minimizes asymmetric biases inherent in conventional machine learning approaches. The framework incorporates L2-regularization, randomized dropout (15-20%), and dynamic learning rate adjustment to balance feature weights symmetrically across donor and recipient data while suppressing redundant representations
+
+### The core mathematical mechanisms for each computational block in MOZAIC:
+![](principle1.png)
+
 
 ### Brief Introduction of Developers
 #### Developer Introduction
