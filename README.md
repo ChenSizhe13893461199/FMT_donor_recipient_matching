@@ -2,6 +2,11 @@
 
 ### The MOZAIC framework:
 ![](framework.png)
+
+### The core mathematical mechanisms of MOZAIC:
+![](principle.png)
+
+
 ### Requirements
 - python 3.9.7 or higher (recommend the version of 3.9.7)
 - keras==2.10.0
@@ -15,9 +20,6 @@
 - tensorflow=2.10.0
 
 ## General utilization guidance:
-
-### The core mathematical mechanisms of MOZAIC:
-![](principle.png)
 
 **1.** The deployment codes can be found in "MOZAIC.py", with full details and annotations attached. Firstly, open "MOZAIC.py" on your laptop (e.g., by Spyder) and introduce all of the necessary packages aforementioned (codes are available in the "MOZAIC.py" file). All of the core codes for designing MOZAIC are deposited in "utils1.py", which can be directly imported by the training codes available in "MOZAIC.py"
 
