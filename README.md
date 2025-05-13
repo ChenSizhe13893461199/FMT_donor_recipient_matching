@@ -5,7 +5,7 @@
 
 
 ### Requirements
-- python 3.9.7 or higher (recommend the version of 3.9.7)
+- python 3.9.7 or higher (recommend the version 3.9.7)
 - keras==2.10.0
 - pandas==1.5.2
 - matplotlib==3.0.3
@@ -22,7 +22,7 @@
 
 **2.** Prepare the necessary datasets (independent training, validation, and test datasets), which have been deposited in .npy files. In detail, files including "donor_training.npy", "recipient_training.npy", "donor_validation.npy", "recipient_validation.npy", "donor_testing.npy", and "recipient_testing.npy" have all been submitted to GitHub for convenience.
 
-**3.** Following the codes provided in "MOZAIC.py" and running it in your local Spyder or other suitable environment directly, the training of AMPLiT will be smoothly performed.
+**3.** Following the codes provided in "MOZAIC.py" and running it in your local Spyder or other suitable environment directly, the training of MOZAIC will be smoothly performed.
 
 ### MOZAIC framework and design
 MOZAIC integrates five densely interconnected neural computational blocks, activation modules, filter layers, and multi-layer perceptrons. Its upstream computational blocks extract parallel featural characteristics from donor and recipient features, while downstream layers identify intrinsic complementary patterns within donor-recipient pairs. By prioritizing interconnective patterns between paired donor-recipient features over isolated features, MOZAIC minimizes asymmetric biases inherent in conventional machine learning approaches.
