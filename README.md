@@ -1,10 +1,3 @@
-### Brief Introduction of Developers
-#### Developer Introduction
-
-**Sizhe Chen**, PhD Student (Medical Sciences) at Chinese University of Hong Kong (1155202847@link.cuhk.edu.hk). Supervisor: **Professor CHAN Ka Leung Francis**, **Professor Siew N.G.**, and **Research Assistant Professor Qi Su**. Welcome to contact **Sizhe Chen** via the aforementioned email if you have any questions or suggestions.
-
-This work is supervised by **Professor Siew N.G.**, and **Research Assistant Professor Qi Su**. The research work is primarily finished by **Sizhe Chen** (PhD student).
-
 # MOZAIC
 
 ### The framework of MOZAIC:
@@ -30,6 +23,13 @@ This work is supervised by **Professor Siew N.G.**, and **Research Assistant Pro
 **2.** Prepare the necessary datasets (independent training, validation, and test datasets), which have been deposited in .npy files. In detail, files including "donor_training.npy", "recipient_training.npy", "donor_validation.npy", "recipient_validation.npy", "donor_testing.npy", "recipient_testing.npy" have all been submitted to GitHub for convenience.
 
 **3.** Following the codes provided in "Train_AMP_identifier2.py" and running it in your local Spyder or other suitable environment directly, the training of AMPLiT will be smoothly performed.
+
+### Brief Introduction of Developers
+#### Developer Introduction
+
+**Sizhe Chen**, PhD Student (Medical Sciences) at Chinese University of Hong Kong (1155202847@link.cuhk.edu.hk). Supervisor: **Professor CHAN Ka Leung Francis**, **Professor Siew N.G.**, and **Research Assistant Professor Qi Su**. Welcome to contact **Sizhe Chen** via the aforementioned email if you have any questions or suggestions.
+
+This work is supervised by **Professor Siew N.G.**, and **Research Assistant Professor Qi Su**. The research work is primarily finished by **Sizhe Chen** (PhD student).
 
 
 
