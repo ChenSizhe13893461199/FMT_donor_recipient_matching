@@ -34,7 +34,7 @@ MOZAIC integrates five densely interconnected neural computational blocks, activ
 #### The core mathematical mechanisms for high-dimensional features fusion in MOZAIC:
 ![](principle6.png)
 
-The framework incorporates L2-regularization, randomized dropout (15-20%), and dynamic learning rate adjustment to balance feature weights symmetrically across donor and recipient data while suppressing redundant representations. More coding details are available in "utils1.py".
+The framework incorporates L2-regularization, randomized dropout (15-20%), and dynamic learning rate adjustment to balance feature weights symmetrically across donor and recipient data while suppressing redundant representations. More mathematical details are available in "utils1.py".
 
 ### Brief Introduction of Developers
 #### Developer Introduction
