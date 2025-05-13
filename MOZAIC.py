@@ -145,7 +145,7 @@ opt = adam_v2.Adam(learning_rate=learning_rate,
 from tensorflow.keras.metrics import AUC
 model1.compile(loss='binary_crossentropy',optimizer=opt,metrics=[AUC()])
 #model1.compile(loss='binary_crossentropy',optimizer=opt,metrics=['accuracy'])
-#if you want to mintor the training of MOZAIC bby using accuracy indicator, please use
+#if you want to mintor the training of MOZAIC by using accuracy indicator, please use
 #the aforementioned codes instead
 
 
