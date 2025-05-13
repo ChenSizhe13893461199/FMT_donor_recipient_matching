@@ -24,12 +24,14 @@
 
 **3.** Following the codes provided in "MOZAIC.py" and running it in your local Spyder or other suitable environment directly, the training of AMPLiT will be smoothly performed.
 
-### The core mathematical mechanisms for each computational block in MOZAIC:
-![](principle1.png)
-
+### MOZAIC framework and design
 MOZAIC integrates five densely interconnected neural computational blocks, activation modules, filter layers, and multi-layer perceptrons. Its upstream computational blocks extract parallel featural characteristics from donor and recipient features, while downstream layers identify intrinsic complementary patterns within donor-recipient pairs. By prioritizing interconnective patterns between paired donor-recipient features over isolated features, MOZAIC minimizes asymmetric biases inherent in conventional machine learning approaches. The framework incorporates L2-regularization, randomized dropout (15-20%), and dynamic learning rate adjustment to balance feature weights symmetrically across donor and recipient data while suppressing redundant representations
 
-### The core mathematical mechanisms for high dimensional features fusion in MOZAIC:
+#### The core mathematical mechanisms for each computational block in MOZAIC:
+![](principle1.png)
+
+
+#### The core mathematical mechanisms for high-dimensional features fusion in MOZAIC:
 ![](principle6.png)
 
 ### Brief Introduction of Developers
