@@ -1,4 +1,4 @@
-# MOZAIC (Microbiota Matching Optimization by Artificial Intelligence)
+## MOZAIC (Microbiota Matching Optimization by Artificial Intelligence)
 
 ### The MOZAIC framework:
 ![](framework.png)
