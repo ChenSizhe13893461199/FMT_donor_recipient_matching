@@ -1,7 +1,7 @@
 # MOZAIC
 
 ### The framework of MOZAIC:
-![](Framework.png)
+![](framework.png)
 
 ### Details of Using MOZAIC
 ### Requirements
