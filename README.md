@@ -16,11 +16,11 @@
 
 ## General utilization guidance:
 
-**1.** The deployment codes can be found in "MOZAIC.py", with full details and annotations attached. Firstly, open "MOZAIC.py" on your laptop (e.g., by Spyder) and introduce all the necessary packages aforementioned (codes are available in the .py file).
+**1.** The deployment codes can be found in "MOZAIC.py", with full details and annotations attached. Firstly, open "MOZAIC.py" on your laptop (e.g., by Spyder) and introduce all the necessary packages aforementioned (codes are available in the .py file). All of the core codes for designing MOZAIC are deposited in "utils1.py", which can be directly imported by the training codes available in "MOZAIC.py"
 
-**2.** Prepare the necessary datasets (independent training, validation, and test datasets), which have been deposited in .npy files. In detail, files including "donor_training.npy", "recipient_training.npy", "donor_validation.npy", "recipient_validation.npy", "donor_testing.npy", "recipient_testing.npy" have all been submitted to GitHub for convenience.
+**2.** Prepare the necessary datasets (independent training, validation, and test datasets), which have been deposited in .npy files. In detail, files including "donor_training.npy", "recipient_training.npy", "donor_validation.npy", "recipient_validation.npy", "donor_testing.npy", and "recipient_testing.npy" have all been submitted to GitHub for convenience.
 
-**3.** Following the codes provided in "Train_AMP_identifier2.py" and running it in your local Spyder or other suitable environment directly, the training of AMPLiT will be smoothly performed.
+**3.** Following the codes provided in "MOZAIC.py" and running it in your local Spyder or other suitable environment directly, the training of AMPLiT will be smoothly performed.
 
 ### Brief Introduction of Developers
 #### Developer Introduction
