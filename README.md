@@ -1,6 +1,6 @@
 # MOZAIC
 
-### The framework of MOZAIC:
+### The MOZAIC framework:
 ![](framework.png)
 ### Requirements
 - python 3.9.7 or higher (recommend the version of 3.9.7)
