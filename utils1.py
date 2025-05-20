@@ -431,7 +431,7 @@ def Phos1(nb_classes, nb_layers,img_dim1,img_dim2,init_form, nb_dense_block,
 
     xy = concatenate([xxx1,xxx2], axis=-1, name='contact_multi_seq')
     channel=xy.shape[-1]
-    xy = layers.Dense(channel*0.5)(xy)#0.5
+    xy = layers.Dense(channel*0.25)(xy)#0.5
     xy = Activation('relu',name='seq1')(xy)
     xy = layers.Dense(channel*0.5)(xy)
     #xy = tf.nn.sigmoid(xy)
