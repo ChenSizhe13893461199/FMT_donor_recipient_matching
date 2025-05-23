@@ -39,7 +39,7 @@ The framework incorporates L2-regularization, randomized dropout (15-20%), and d
 ### Brief Introduction of Developers
 #### Developer Introduction
 
-**Sizhe Chen**, PhD Student (Medical Sciences) at Chinese University of Hong Kong (1155202847@link.cuhk.edu.hk).
+**Sizhe Chen**, PhD Student (Medical Sciences) at Chinese University of Hong Kong (1155202847@link.cuhk.edu.hk), and Microbiota I-center Limited (Magic).
 
 Supervisor: **Professor CHAN Ka Leung Francis**, **Professor Siew N.G.**, and **Research Assistant Professor Qi Su**. Welcome to contact **Sizhe Chen** via the aforementioned email if you have any questions or suggestions.
 
