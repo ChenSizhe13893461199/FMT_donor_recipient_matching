@@ -8,7 +8,6 @@
 - python 3.9.7 or higher (recommend the version 3.9.7)
 - keras==2.10.0
 - pandas==1.5.2
-- matplotlib==3.0.3
 - numpy==1.23.5
 - sklearn=1.2.0
 - propy3=1.1.0
