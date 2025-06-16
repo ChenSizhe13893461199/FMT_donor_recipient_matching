@@ -17,11 +17,17 @@
 
 ### some helpful installing codes
 conda create -n spyder_env python=3.9 spyder=5.3.3 spyder-kernels=3.0 -y
+
 conda activate spyder_env
+
 conda install -y pandas=1.5.2 numpy=1.23.5 scikit-learn=1.2.0 scipy=1.9.3
+
 conda install -y gensim=4.3.0
+
 pip install keras==2.10.0 tensorflow==2.10.0 propy3==1.1.0
+
 conda install -y -c conda-forge matplotlib=3.5.2
+
 Then, it should be smoothy to open spyder(spyder_env) to implement MOZAIC
 
 ## General utilization guidance:
