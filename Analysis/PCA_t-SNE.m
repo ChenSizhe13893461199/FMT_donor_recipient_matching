@@ -3,6 +3,7 @@
 % Read Input Data
 data = readtable('microbiome.xlsx'); 
 %1-515 rows represent features of pre-FMT recipinet, while 516-1030 and 1031-1545 represent features of post-FMT recipient and donor, respectively
+labels = readtable('label.xlsx');
 
 % Filter Features
 data_matrix = data{:,:};
