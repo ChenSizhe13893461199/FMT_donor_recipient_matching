@@ -3,7 +3,12 @@
 data = readtable('Source Data File.xlsx');
 data = data(data.category == 0 | data.category == 1, :); % Responders & Non-Responders data
 data.Group = categorical(data.(data.Properties.VariableNames{1}));  % Categorical Variable
-data.DiseasesClass = categorical(data.DiseasesClass); % Categorical Variable                 
+
+data.DiseasesClass = categorical(data.DiseasesClass); % Categorical Variable
+
+%DiseasesClass (1: Crohn’s Disease; 2: Tourette_syndrome; 3: CDI; 4: Antibiotics Resistsance; 5: Melanoma; 6: healthy volunteer;
+%7: ulcerative colitis; 8: IBS; 9: renal_carcinoma; 10: metabolic syndrome; 11: Diabetes; 12: Obesity; 13: PACS)
+
 data.Gender = categorical(data.Gender); % Categorical Variable
 
 % ANOVA-based Multiple Linear Regression
