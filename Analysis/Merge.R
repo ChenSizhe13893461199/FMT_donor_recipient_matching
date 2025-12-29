@@ -65,8 +65,6 @@ x <- as.data.frame(x)
 write.csv(x, "fungi.csv", row.names = TRUE, fileEncoding = "UTF-8") # fungi
 
 bracken_files1 <- list.files(folder_path, pattern = "viral_bracken_report.txt$", full.names = TRUE)
-
-# 打印找到的文件
 print(bracken_files1)
 
 data_list1 <- lapply(bracken_files1, function(file) {
