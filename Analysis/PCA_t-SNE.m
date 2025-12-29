@@ -8,9 +8,17 @@ labels = readtable('label.xlsx');
 % Filter Features
 data_matrix = data{:,:};
 diseases_class = labels.Response;
+%PCA Method
 [Y_optimized, explained_opt, selected] = optimize_microbiome_pca(data_matrix, 0.1); % Preserve top 90% features
+Y = Y_optimized(:, 1:2);
 
-% For figure of different categories (Response/Non-Response/Unknown)
+% If t-SNE is applied, please use the annotated codes below 
+% please note that the t-SNE results will be slightly different from each time of coding due to its intrinsic randomization mechanisms;
+% The overall t-SNE results will maintain the same trends
+%Y = tsne(data_matrix);
+%Y = score(:,1:2);
+
+% For PCA figure of different categories (Response/Non-Response/Unknown)
 point=Y(516:1030,:)-Y(1:515,:); % Post-FMT Recipient - Pre-FMYT Recipient
 %point=Y(516:1030,:)-Y(1031:1545,:); % Post-FMT Recipient - Donor
 new_class=diseases_class(1:515,:);
