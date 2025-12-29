@@ -3,7 +3,7 @@
 % Read Input Data
 data = readtable('microbiome.xlsx');
 %data = readtable('pathway5.xlsx');
-%data = readtable('KO.xlsx');
+%data = readtable('ko.xlsx');
 labels = readtable('label.xlsx');
 
 % Filter Features
