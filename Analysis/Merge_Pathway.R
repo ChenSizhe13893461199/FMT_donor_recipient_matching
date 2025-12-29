@@ -2,7 +2,7 @@ library(tidyr)
 library(dplyr)
 library(readr)
 
-setwd("Your Directory")
+setwd("Your Directory")# please replace it with your directory
 
 folder_path <- "Your Directory"
 bracken_files1 <- list.files(folder_path, pattern = "_pathabundance.tsv$", full.names = TRUE)
