@@ -1,4 +1,4 @@
-% ANOVA-based Multiple Linear Regression Codes
+% ANOVA-based Multiple Linear Regression Codes with multi-confounders adjustment
 
 data = readtable('Source Data File.xlsx');
 data = data(data.category == 0 | data.category == 1, :); % Responders & Non-Responders data
