@@ -74,6 +74,15 @@ def optimize_microbiome_pca(data_matrix, var_threshold):
     # Calculate scores
     score = data_centered @ V_sorted
     
+    # Adjust sign to be consistent with MATLAB
+    # This step ensures the results are comparable
+    for i in range(score.shape[1]):
+        if i < len(idx) and idx[i] < V.shape[1]:
+            # Adjust sign based on the first element of the eigenvector
+            if V_sorted[0, i] < 0:
+                score[:, i] = -score[:, i]
+                V_sorted[:, i] = -V_sorted[:, i]
+    
     # Get first 2 components
     Y = score[:, :2]
     
@@ -85,6 +94,22 @@ def optimize_microbiome_pca(data_matrix, var_threshold):
     print(f'PC2 explained rate: {explained[1]:.1f}%')
     
     return Y, explained, selected_features
+
+def align_with_matlab(Y_matlab=None):
+
+    def align_function(Y_python, Y_matlab=None):
+        if Y_matlab is not None and Y_python.shape == Y_matlab.shape:
+
+            for i in range(Y_python.shape[1]):
+                corr = np.corrcoef(Y_python[:, i], Y_matlab[:, i])[0, 1]
+                if corr < 0:
+                    Y_python[:, i] = -Y_python[:, i]
+        else:
+
+            pass
+        return Y_python
+    
+    return align_function
 
 def main():
     # Read Input Data
@@ -113,19 +138,33 @@ def main():
     # Calculate Post-FMT Recipient - Pre-FMT Recipient
     point = Y[515:1030, :] - Y[:515, :]  # Python uses 0-based indexing
     
-    # Alternative: Post-FMT Recipient - Donor
-    # point = Y[515:1030, :] - Y[1030:1545, :]
     
     new_class = diseases_class[:515]  # Use only pre-FMT recipient labels
     
     # Create colors for different groups
-    # Using matplotlib's tab20 colormap for more colors
-    cmap = plt.cm.tab20(np.linspace(0, 1, 20))
+    cmap_colors = [
+        [0, 0.4470, 0.7410],    
+        [0.8500, 0.3250, 0.0980], 
+        [0.9290, 0.6940, 0.1250], 
+        [0.4940, 0.1840, 0.5560],
+        [0.4660, 0.6740, 0.1880], 
+        [0.3010, 0.7450, 0.9330], 
+        [0.6350, 0.0780, 0.1840],
+        [0, 0.5, 0],            
+        [0.5, 0, 0.5],          
+        [0.5, 0.5, 0],         
+        [0, 0.5, 0.5],          
+        [0.5, 0, 0],            
+        [0, 0, 0.5]             
+    ]
     
-    # Adjust colors as needed (similar to MATLAB lines colormap)
-    # For the first 6 colors, we can use tab20
-    # For the next 7, we can adjust (similar to MATLAB code)
-    # Create custom colormap if needed
+
+    if len(cmap_colors) < 13:
+        tab20_colors = plt.cm.tab20(np.linspace(0, 1, 20))
+        for i in range(len(cmap_colors), 13):
+            cmap_colors.append(tab20_colors[i % 20])
+    
+    cmap = np.array(cmap_colors)
     
     # Figure 1: Different categories (Response/Non-Response/Unknown)
     fig1, ax1 = plt.subplots(figsize=(10, 8))
@@ -133,13 +172,14 @@ def main():
     # Plot points for each class
     for i in range(3):
         idx = (new_class == i)
-        ax1.scatter(point[idx, 0], point[idx, 1], 
-                   s=40, marker='o',
-                   color=cmap[i], 
-                   alpha=0.6,
-                   edgecolors=cmap[i],
-                   linewidths=1,
-                   label=f'Class {i}')
+        if np.any(idx):
+            ax1.scatter(point[idx, 0], point[idx, 1], 
+                       s=40, marker='o',
+                       color=cmap[i], 
+                       alpha=0.6,
+                       edgecolors=cmap[i],
+                       linewidths=1,
+                       label=f'Class {i}')
     
     # Calculate center points
     centers = np.zeros((2, 2))
@@ -148,19 +188,23 @@ def main():
         if len(class_points) > 0:
             centers[i, :] = np.mean(class_points, axis=0)
     
-    # Draw arrows from origin to center points
+    # Draw arrows from origin to center points (reverse order as in MATLAB)
     for i in range(1, -1, -1):  # Reverse order as in MATLAB
-        ax1.arrow(0, 0, centers[i, 0], centers[i, 1],
-                 head_width=0.05, head_length=0.1, 
-                 fc=cmap[i], ec=cmap[i],
-                 linewidth=1.5,
-                 length_includes_head=True)
+        if np.any(np.isfinite(centers[i])) and not np.all(centers[i] == 0):
+            ax1.arrow(0, 0, centers[i, 0], centers[i, 1],
+                     head_width=np.max(np.abs(centers[i])) * 0.05, 
+                     head_length=np.max(np.abs(centers[i])) * 0.1,
+                     fc=cmap[i], ec=cmap[i],
+                     linewidth=1.5,
+                     length_includes_head=True)
     
     ax1.set_xlabel('PC1')
     ax1.set_ylabel('PC2')
     ax1.set_title('PCA: Post-FMT vs Pre-FMT Differences')
     ax1.legend()
     ax1.grid(True, alpha=0.3)
+    ax1.axhline(y=0, color='k', linestyle='-', linewidth=0.5, alpha=0.5)
+    ax1.axvline(x=0, color='k', linestyle='-', linewidth=0.5, alpha=0.5)
     
     # Figure 2: Different diseases categories
     # Note: Assuming Diseases_Class column exists in labels
@@ -191,17 +235,21 @@ def main():
         
         # Draw arrows from origin to center points
         for i in range(13):
-            ax2.arrow(0, 0, centers_diseases[i, 0], centers_diseases[i, 1],
-                     head_width=0.02, head_length=0.04,
-                     fc=cmap[i], ec=cmap[i],
-                     linewidth=1.5,
-                     length_includes_head=True)
+            if np.any(np.isfinite(centers_diseases[i])) and not np.all(centers_diseases[i] == 0):
+                ax2.arrow(0, 0, centers_diseases[i, 0], centers_diseases[i, 1],
+                         head_width=np.max(np.abs(centers_diseases[i])) * 0.02,
+                         head_length=np.max(np.abs(centers_diseases[i])) * 0.04,
+                         fc=cmap[i], ec=cmap[i],
+                         linewidth=1.5,
+                         length_includes_head=True)
         
         ax2.set_xlabel('PC1')
         ax2.set_ylabel('PC2')
         ax2.set_title('PCA: Disease Categories Differences')
         ax2.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
         ax2.grid(True, alpha=0.3)
+        ax2.axhline(y=0, color='k', linestyle='-', linewidth=0.5, alpha=0.5)
+        ax2.axvline(x=0, color='k', linestyle='-', linewidth=0.5, alpha=0.5)
     
     plt.tight_layout()
     plt.show()
