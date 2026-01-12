@@ -1,7 +1,7 @@
 % ANOVA-based Multiple Linear Regression Codes with multi-confounders adjustment
 
 data = readtable('Source Data File.xlsx');
-data = data(data.category == 0 | data.category == 1, :); % Responders & Non-Responders data
+data = data(data.category_response_1_or_non_response_0_or_unknown_2 == 0 | data.category_response_1_or_non_response_0_or_unknown_2 == 1, :); % Responders & Non-Responders data
 data.Group = categorical(data.(data.Properties.VariableNames{1}));  % Categorical Variable
 
 data.DiseasesClass = categorical(data.DiseasesClass); % Categorical Variable
