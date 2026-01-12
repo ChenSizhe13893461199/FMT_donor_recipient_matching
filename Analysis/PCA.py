@@ -189,7 +189,7 @@ def main():
             centers[i, :] = np.mean(class_points, axis=0)
     
     # Draw arrows from origin to center points (reverse order as in MATLAB)
-    for i in range(1, -1, -1):  # Reverse order as in MATLAB
+    for i in range(1, -1, -1): 
         if np.any(np.isfinite(centers[i])) and not np.all(centers[i] == 0):
             ax1.arrow(0, 0, centers[i, 0], centers[i, 1],
                      head_width=np.max(np.abs(centers[i])) * 0.05, 
