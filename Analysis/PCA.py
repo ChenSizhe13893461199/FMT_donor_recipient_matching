@@ -138,7 +138,7 @@ def main():
     # Calculate Post-FMT Recipient - Pre-FMT Recipient
     point = Y[515:1030, :] - Y[:515, :]  # Python uses 0-based indexing
     
-    
+    point[:, 1] = -point[:, 1]
     new_class = diseases_class[:515]  # Use only pre-FMT recipient labels
     
     # Create colors for different groups
