@@ -71,17 +71,17 @@ for i = 1:13
         'MarkerEdgeAlpha', 0.6);
 end
 
-% calculating center point
-centers = zeros(13,2);
-for i = 1:13
-    centers(i,:) = mean(point(new_class == i, :), 1);
-end
+%calculating center point
+%centers = zeros(13,2);
+%for i = 1:13
+%    centers(i,:) = mean(point(new_class == i, :), 1);
+%end
 
 % For figure of different diseases categories
-for i = 1:13
-    quiver(0, 0, centers(i,1), centers(i,2), ...
-        'AutoScale', 'off', ...
-        'Color', cmap(i,:), ...
-        'LineWidth', 1.5, ...
-        'MaxHeadSize', 1);
-end
+%for i = 1:13
+%    quiver(0, 0, centers(i,1), centers(i,2), ...
+%        'AutoScale', 'off', ...
+%        'Color', cmap(i,:), ...
+%        'LineWidth', 1.5, ...
+%        'MaxHeadSize', 1);
+%end
