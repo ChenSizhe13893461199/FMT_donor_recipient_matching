@@ -14,7 +14,7 @@ data.Gender = categorical(data.Gender); % Categorical Variable
 model = fitlm(data, ...
     sprintf('%s ~ Group + DiseasesClass+Gender+Age+antibiotics', data.Properties.VariableNames{29}), ...
     'CategoricalVars', {'Group', 'DiseasesClass','Gender','antibiotics'}); 
-    %Here 29 represents the 29th column (pre-FMT recipient Shannon); Please replace it with other numbers if further analysis for other indexes are needed
+%Here 29 represents the 29th column (pre-FMT recipient Shannon); Please replace it with other numbers if further analysis (e.g. Donor Shannon, Donor Simpson, and etc.) for other indexes are needed
 
 disp(model);
 
