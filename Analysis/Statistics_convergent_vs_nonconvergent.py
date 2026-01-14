@@ -25,6 +25,15 @@ data['Gender'] = pd.Categorical(data['Gender'])
 
 data['antibiotics'] = pd.Categorical(data['antibiotics'])
 
+def clean_column_name(col_name):
+    if isinstance(col_name, str):
+        col_name = col_name.replace(' ', '_')
+        col_name = re.sub(r'[^a-zA-Z0-9_]', '', col_name)
+    return col_name
+
+column_mapping = {col: clean_column_name(col) for col in data.columns}
+data = data.rename(columns=column_mapping)
+
 # ANOVA-based Multiple Linear Regression
 dv_col_name = list(column_mapping.values())[28] # here the 28 represents the 29th column pre-FMT recipient Shannon,
 
