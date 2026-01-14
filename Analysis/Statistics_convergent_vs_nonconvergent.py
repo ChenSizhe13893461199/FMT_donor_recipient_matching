@@ -23,17 +23,12 @@ data['Gender'] = pd.Categorical(data['Gender'])
 # 5: Melanoma; 6: healthy volunteer; 7: ulcerative colitis; 8: IBS; 
 # 9: renal_carcinoma; 10: metabolic syndrome; 11: Diabetes; 12: Obesity; 13: PACS
 
-
-if 'antibiotics' in data.columns:
-    data['antibiotics'] = pd.Categorical(data['antibiotics'])
+data['antibiotics'] = pd.Categorical(data['antibiotics'])
 
 # ANOVA-based Multiple Linear Regression
 dv_col_name = data.columns[28]  # here the 28 represents the 29th column pre-FMT recipient Shannon,
 
-formula = f'{dv_col_name} ~ Group + DiseasesClass + Gender + Age'
-
-if 'antibiotics' in data.columns:
-    formula += ' + antibiotics'
+formula = f'{dv_col_name} ~ Group + DiseasesClass + Gender + Age + antibiotics'
 
 model = smf.ols(formula=formula, data=data).fit()
 
