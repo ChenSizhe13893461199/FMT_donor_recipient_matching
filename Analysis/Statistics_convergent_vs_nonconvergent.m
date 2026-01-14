@@ -9,7 +9,7 @@ data.DiseasesClass = categorical(data.DiseasesClass); % Categorical Variable
 %7: ulcerative colitis; 8: IBS; 9: renal_carcinoma; 10: metabolic syndrome; 11: Diabetes; 12: Obesity; 13: PACS)
 
 data.Gender = categorical(data.Gender); % Categorical Variable
-
+data.antibiotics = categorical(data.antibiotics); % Categorical Variable
 % ANOVA-based Multiple Linear Regression
 model = fitlm(data, ...
     sprintf('%s ~ Group + DiseasesClass+Gender+Age+antibiotics', data.Properties.VariableNames{29}), ...
