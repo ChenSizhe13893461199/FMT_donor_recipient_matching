@@ -26,7 +26,7 @@ data['Gender'] = pd.Categorical(data['Gender'])
 data['antibiotics'] = pd.Categorical(data['antibiotics'])
 
 # ANOVA-based Multiple Linear Regression
-dv_col_name = data.columns[28]  # here the 28 represents the 29th column pre-FMT recipient Shannon,
+dv_col_name = list(column_mapping.values())[28] # here the 28 represents the 29th column pre-FMT recipient Shannon,
 
 formula = f'{dv_col_name} ~ Group + DiseasesClass + Gender + Age + antibiotics'
 
