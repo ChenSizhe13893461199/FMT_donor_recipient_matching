@@ -9,6 +9,7 @@ import pandas as pd
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 from patsy import dmatrices
+import re
 
 data = pd.read_excel('Source Data File.xlsx')
 
