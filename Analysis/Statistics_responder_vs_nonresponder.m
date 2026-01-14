@@ -6,6 +6,8 @@ data.Group = categorical(data.(data.Properties.VariableNames{1}));  % Categorica
 
 data.DiseasesClass = categorical(data.DiseasesClass); % Categorical Variable
 
+data.antibiotics = categorical(data.antibiotics); % Categorical Variable
+
 %DiseasesClass (1: Crohn’s Disease; 2: Tourette_syndrome; 3: CDI; 4: Antibiotics Resistsance; 5: Melanoma; 6: healthy volunteer;
 %7: ulcerative colitis; 8: IBS; 9: renal_carcinoma; 10: metabolic syndrome; 11: Diabetes; 12: Obesity; 13: PACS)
 
