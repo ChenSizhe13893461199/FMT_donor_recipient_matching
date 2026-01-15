@@ -60,6 +60,7 @@ end
 
 % For figure of different diseases categories
 diseases_class = labels.Diseases_Class;
+new_class=diseases_class(1:515,:);
 figure;
 hold on;
 for i = 1:13
