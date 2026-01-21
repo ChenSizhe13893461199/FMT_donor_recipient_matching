@@ -20,7 +20,7 @@ Y = Y_optimized(:, 1:2);
 
 % For PCA figure of different categories (Response/Non-Response/Unknown)
 point=Y(516:1030,:)-Y(1:515,:); % Post-FMT Recipient - Pre-FMT Recipient
-%point=Y(516:1030,:)-Y(1031:1545,:); % Post-FMT Recipient - Donor
+%point=Y(516:1030,:)-Y(1031:1546,:); % Post-FMT Recipient - Donor
 new_class=diseases_class(1:515,:);
 
 %Creating colors for different groups
