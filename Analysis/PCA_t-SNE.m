@@ -1,7 +1,7 @@
 %%
 % Using the codes below can reproduce the PCA analysis in our response letter to reviewers
 % Read Input Data
-data = readtable('microbiome.xlsx'); %microbiome.xlsx, pathway.xlsx and KO.xlsx represents infomration of microbiota, metabolic pathway, and KO;
+data = readtable('microbiome.xlsx'); %microbiome.xlsx, pathway.xlsx and ko.xlsx represents infomration of microbiota, metabolic pathway, and KO;
 %1-515 rows represent features of pre-FMT recipinet, while 516-1030 and 1031-1545 represent features of post-FMT recipient and donor, respectively
 labels = readtable('label.xlsx');
 
