@@ -116,7 +116,7 @@ def main():
     data = pd.read_excel('microbiome.xlsx')
     # 1-515 rows represent features of pre-FMT recipient
     # 516-1030 rows represent features of post-FMT recipient
-    # 1031-1545 rows represent features of donor
+    # 1031-1546 rows represent features of donor
     
     labels = pd.read_excel('label.xlsx')
     
