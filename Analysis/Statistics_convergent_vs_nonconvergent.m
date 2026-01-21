@@ -2,7 +2,7 @@
 
 data = readtable('Source Data File.xlsx');
 data.Group = categorical(data.(data.Properties.VariableNames{43}));  % the 43th column possesses the Categorical Variable "Increased Microbiome Label" (convergent vs non-convergent pairs, post-FMT)
-
+%Users can change the number for analyzing other variables
 data.DiseasesClass = categorical(data.DiseasesClass); % Categorical Variable
 
 %DiseasesClass (1: Crohn’s Disease; 2: Tourette_syndrome; 3: CDI; 4: Antibiotics Resistsance; 5: Melanoma; 6: healthy volunteer;
