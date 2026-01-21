@@ -34,12 +34,13 @@ y <- pivot_wider(x1_filtered, id_cols = c('# KO'),
                  names_from = sample, values_from = 'KO')
 y1 <- t(y)
 y1 <- as.data.frame(y1)
-colnames(y1) <- as.character(y$`# Gene Family`)  
+colnames(y1) <- as.character(y$`# KO`)  
 y1 <- y1[-1, ]
 
 
 
 write.csv(y1, "ko.csv", row.names = TRUE, fileEncoding = "UTF-8")
+
 
 
 
