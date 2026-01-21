@@ -16,7 +16,6 @@ Y = Y_optimized(:, 1:2);
 % please note that the t-SNE results will be slightly different from each time of coding due to its intrinsic randomization mechanisms;
 % The overall t-SNE results will maintain the same trends
 %Y = tsne(data_matrix);
-%Y = score(:,1:2);
 
 % For PCA figure of different categories (Response/Non-Response/Unknown)
 point=Y(516:1030,:)-Y(1:515,:); % Post-FMT Recipient - Pre-FMT Recipient
