@@ -2,7 +2,7 @@
 % Using the codes below can reproduce the PCA analysis in our response letter to reviewers
 % Read Input Data
 data = readtable('microbiome.xlsx'); 
-%1-515 rows represent features of pre-FMT recipinet, while 516-1030 and 1031-1545 represent features of post-FMT recipient and donor, respectively
+%1-515 rows represent features of pre-FMT recipinet, while 516-1030 and 1031-1545 rows represent features of post-FMT recipient and donor (with precise orders), respectively
 labels = readtable('label.xlsx');
 
 % Filter Features
