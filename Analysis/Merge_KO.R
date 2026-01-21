@@ -30,7 +30,6 @@ x1_filtered <- x1 %>% filter(!grepl("unclassified|Unclassified|UNCLASSIFIED|UNIN
 
 # Reshape the data from long to wide format
 
-# Reshape the data from long to wide format
 y <- pivot_wider(x1_filtered, id_cols = c('# Gene Family'), 
                  names_from = sample, values_from = 'GeneFamily')
 y1 <- t(y)
@@ -41,3 +40,4 @@ y1 <- y1[-1, ]
 
 
 write.csv(y1, "ko.csv", row.names = TRUE, fileEncoding = "UTF-8")
+
