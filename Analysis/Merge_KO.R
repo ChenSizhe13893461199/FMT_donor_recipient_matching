@@ -42,6 +42,3 @@ y1 <- y1[-1, ]
 write.csv(y1, "ko.csv", row.names = TRUE, fileEncoding = "UTF-8")
 
 
-
-
-
