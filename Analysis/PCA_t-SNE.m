@@ -58,18 +58,18 @@ end
 
 
 % For figure of different diseases categories
-diseases_class = labels.Diseases_Class;
-new_class=diseases_class(1:515,:);
-figure;
-hold on;
-for i = 1:13
-    idx = (new_class == i);
-    scatter(point(idx,1), point(idx,2), 40, 'filled', ...
-        'MarkerFaceColor', cmap(i,:), ...
-        'MarkerFaceAlpha', 0.3, ...
-        'MarkerEdgeColor', cmap(i,:), ...
-        'MarkerEdgeAlpha', 0.6);
-end
+%diseases_class = labels.Diseases_Class;
+%new_class=diseases_class(1:515,:);
+%figure;
+%hold on;
+%for i = 1:13
+%    idx = (new_class == i);
+%    scatter(point(idx,1), point(idx,2), 40, 'filled', ...
+%        'MarkerFaceColor', cmap(i,:), ...
+%        'MarkerFaceAlpha', 0.3, ...
+%        'MarkerEdgeColor', cmap(i,:), ...
+%        'MarkerEdgeAlpha', 0.6);
+%end
 
 %calculating center point
 %centers = zeros(13,2);
