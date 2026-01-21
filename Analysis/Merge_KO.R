@@ -15,7 +15,7 @@ data_list1 <- lapply(bracken_files1, function(file) {
   sample_name <- gsub("_KOs.tsv$", "", basename(file))
   
   if (ncol(df) >= 2) {
-    colnames(df)[2] <- "KO"  
+    colnames(df)[2] <- "GeneFamily"  
     df <- cbind(df, sample = sample_name)  
     return(df)
   } else {
@@ -40,5 +40,6 @@ y1 <- y1[-1, ]
 
 
 write.csv(y1, "ko.csv", row.names = TRUE, fileEncoding = "UTF-8")
+
 
 
