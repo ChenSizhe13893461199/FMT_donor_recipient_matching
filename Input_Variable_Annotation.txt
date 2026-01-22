@@ -1,5 +1,5 @@
 ##### Below are feature variables used for MOZAIC, with the corresponding data available in file "recipient_training.npy", "recipient_validation.npy", "recipient_testing.npy",
-##### "donor_training.npy", "donor_validation.npy", and "donor_testing.npy", which have been priorly uploaded to the Main directory of the GitHub link.
+##### "donor_training.npy", "donor_validation.npy", and "donor_testing.npy", which have been uploaded to the Main directory of the GitHub link.
 ##### The order of these feature corresponds precisely to the columns in the data matrices, arranged sequentially from left to right and top to bottom.
 
 #Microbiota Variable Name
@@ -1847,5 +1847,6 @@ K09903
 K10117
 K10947
 K11189
+
 
 
