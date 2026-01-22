@@ -117,7 +117,7 @@ def main():
     # 1-515 rows represent features of pre-FMT recipient
     # 516-1030 rows represent features of post-FMT recipient
     # 1031-1546 rows represent features of donor
-    #orders are precisely arranged
+    # The order of the rows above (pre-FMT recipient/post-FMT recipient/donor) corresponds precisely to the FMT order
     labels = np.load('response_labels.npy')
     
     # Filter Features
