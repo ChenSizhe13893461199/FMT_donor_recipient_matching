@@ -114,9 +114,8 @@ def align_with_matlab(Y_matlab=None):
 def main():
     # Read Input Data
     data = np.load('microbiome_data.npy')
-    # 1-515 rows represent features of pre-FMT recipient
-    # 516-1030 rows represent features of post-FMT recipient
-    # 1031-1546 rows represent features of donor
+    # 1st-515th rows represent features of pre-FMT recipinet
+    # while 516th-1030th and 1031th-1545th rows represent features of post-FMT recipient and donor (with precise orders), respectively
     # The order of the rows above (pre-FMT recipient/post-FMT recipient/donor) corresponds precisely to the FMT order
     labels = np.load('response_labels.npy')
     
