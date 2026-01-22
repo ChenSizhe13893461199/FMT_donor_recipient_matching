@@ -1,10 +1,10 @@
 %%%%%
 %%%%% Using the codes below can reproduce the PCA analysis in our response letter to reviewers
 %%%%% Read Input Data
-data = readtable('microbiome.xlsx'); 
+load('microbiome.mat');
 %%%%% 1st-515th rows represent features of pre-FMT recipinet, while 516th-1030th and 1031th-1545th rows represent features of post-FMT recipient and donor (with precise orders), respectively
-labels = readtable('label.xlsx');
-
+load('labels.mat');
+%%%%%load label information
 %%%%% Filter Features
 data_matrix = data{:,:};
 diseases_class = labels.Response;
