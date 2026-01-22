@@ -117,7 +117,7 @@ def main():
     # 1-515 rows represent features of pre-FMT recipient
     # 516-1030 rows represent features of post-FMT recipient
     # 1031-1546 rows represent features of donor
-    
+    #orders are precisely arranged
     labels = np.load('response_labels.npy')
     
     # Filter Features
@@ -136,10 +136,10 @@ def main():
     
     # For PCA figure of different categories (Response/Non-Response/Unknown)
     # Calculate Post-FMT Recipient - Pre-FMT Recipient
-    point = Y[515:1030, :] - Y[:515, :]  # Python uses 0-based indexing
+    point = Y[515:1030, :] - Y[:515, :] # post-FMT recipient-pre-FMT recipient
     
     point[:, 1] = -point[:, 1]
-    new_class = diseases_class[:515]  # Use only pre-FMT recipient labels
+    new_class = diseases_class[:515] 
     
     # Create colors for different groups
     cmap_colors = [
