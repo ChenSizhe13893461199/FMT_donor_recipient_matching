@@ -113,16 +113,16 @@ def align_with_matlab(Y_matlab=None):
 
 def main():
     # Read Input Data
-    data = pd.read_excel('microbiome.xlsx')
+    data = np.load('microbiome_data.npy')
     # 1-515 rows represent features of pre-FMT recipient
     # 516-1030 rows represent features of post-FMT recipient
     # 1031-1546 rows represent features of donor
     
-    labels = pd.read_excel('label.xlsx')
+    labels = np.load('response_labels.npy')
     
     # Filter Features
-    data_matrix = data.values
-    diseases_class = labels['Response'].values
+    data_matrix = data
+    diseases_class = labels
     
     # PCA Method
     Y_optimized, explained_opt, selected = optimize_microbiome_pca(data_matrix, 0.1)
@@ -208,14 +208,13 @@ def main():
     
     # Figure 2: Different diseases categories
     # Note: Assuming Diseases_Class column exists in labels
-    if 'Diseases_Class' in labels.columns:
-        diseases_class_full = labels['Diseases_Class'].values
-        diseases_new_class = diseases_class_full[:515]  # Pre-FMT labels
+    diseases_class_full = np.load('diseases_labels.npy')
+    diseases_new_class = diseases_class_full[:515]  # Pre-FMT labels
         
-        fig2, ax2 = plt.subplots(figsize=(12, 10))
+    fig2, ax2 = plt.subplots(figsize=(12, 10))
         
         # Plot points for each disease class (1-13)
-        for i in range(1, 14):  # 1 to 13 inclusive
+    for i in range(1, 14):  # 1 to 13 inclusive
             idx = (diseases_new_class == i)
             if np.any(idx):
                 ax2.scatter(point[idx, 0], point[idx, 1],
@@ -227,14 +226,14 @@ def main():
                            label=f'Disease {i}')
         
         # Calculate center points for each disease class
-        centers_diseases = np.zeros((13, 2))
-        for i in range(1, 14):
+    centers_diseases = np.zeros((13, 2))
+    for i in range(1, 14):
             class_points = point[diseases_new_class == i]
             if len(class_points) > 0:
                 centers_diseases[i-1, :] = np.mean(class_points, axis=0)
         
-        # Draw arrows from origin to center points
-        for i in range(13):
+    # Draw arrows from origin to center points
+    for i in range(13):
             if np.any(np.isfinite(centers_diseases[i])) and not np.all(centers_diseases[i] == 0):
                 ax2.arrow(0, 0, centers_diseases[i, 0], centers_diseases[i, 1],
                          head_width=np.max(np.abs(centers_diseases[i])) * 0.02,
@@ -243,13 +242,13 @@ def main():
                          linewidth=1.5,
                          length_includes_head=True)
         
-        ax2.set_xlabel('PC1')
-        ax2.set_ylabel('PC2')
-        ax2.set_title('PCA: Disease Categories Differences')
-        ax2.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
-        ax2.grid(True, alpha=0.3)
-        ax2.axhline(y=0, color='k', linestyle='-', linewidth=0.5, alpha=0.5)
-        ax2.axvline(x=0, color='k', linestyle='-', linewidth=0.5, alpha=0.5)
+    ax2.set_xlabel('PC1')
+    ax2.set_ylabel('PC2')
+    ax2.set_title('PCA: Disease Categories Differences')
+    ax2.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+    ax2.grid(True, alpha=0.3)
+    ax2.axhline(y=0, color='k', linestyle='-', linewidth=0.5, alpha=0.5)
+    ax2.axvline(x=0, color='k', linestyle='-', linewidth=0.5, alpha=0.5)
     
     plt.tight_layout()
     plt.show()
