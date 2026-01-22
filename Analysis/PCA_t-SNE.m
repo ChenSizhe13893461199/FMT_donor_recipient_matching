@@ -1,4 +1,3 @@
-%%%%%
 %%%%% Using the codes below can reproduce the PCA analysis in our response letter to reviewers
 %%%%% Read Input Data
 load('microbiome.mat');
@@ -56,9 +55,6 @@ for i = 2:-1:1
         'LineWidth', 1.5, ...
         'MaxHeadSize', 6);
 end
-
-
-
 %%%%% For figure of different diseases categories
 %diseases_class = labels.Diseases_Class;
 %new_class=diseases_class(1:515,:);
