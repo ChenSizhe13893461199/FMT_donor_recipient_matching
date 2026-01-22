@@ -57,7 +57,7 @@ end
 
 
 
-% For figure of different diseases categories
+%%% For figure of different diseases categories
 %diseases_class = labels.Diseases_Class;
 %new_class=diseases_class(1:515,:);
 %figure;
@@ -71,13 +71,13 @@ end
 %        'MarkerEdgeAlpha', 0.6);
 %end
 
-%calculating center point
+%%% calculating center point
 %centers = zeros(13,2);
 %for i = 1:13
 %    centers(i,:) = mean(point(new_class == i, :), 1);
 %end
 
-% For figure of different diseases categories
+%%% For figure of different diseases categories
 %for i = 1:13
 %    quiver(0, 0, centers(i,1), centers(i,2), ...
 %        'AutoScale', 'off', ...
