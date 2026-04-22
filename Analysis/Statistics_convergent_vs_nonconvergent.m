@@ -1,6 +1,6 @@
 % ANOVA-based Multiple Linear Regression Codes with multi-confounders adjustment (This script can only be used for comparing convergent vs non-convergent pairs)
 
-data = readtable('Source Data File.xlsx');
+data = readtable('Your File Name.xlsx');
 data.Group = categorical(data.(data.Properties.VariableNames{43}));  % the 43th column possesses the Categorical Variable "Increased Microbiome Label" (convergent vs non-convergent pairs, post-FMT)
 
 data.DiseasesClass = categorical(data.DiseasesClass); % Categorical Variable
