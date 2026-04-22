@@ -1,5 +1,5 @@
 %Association Analysis (Profile Dissimilarity vs Increased Profile Similarity)
-data = readtable('Source Data File.xlsx');
+data = readtable('Your File Name.xlsx');
 increased = data.Overall_Increased_Similarity; % Increased Similarity in Microbiome Profiles
 %increased = data.Pathway_increased_similarity; % Increased Similarity in Pathway Profiles
 %increased = data.KO_increased; % Increased Similarity in KO Profiles
