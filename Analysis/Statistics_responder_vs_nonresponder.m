@@ -1,6 +1,6 @@
 % ANOVA-based Multiple Linear Regression Codes with multi-confounders adjustment (This script can only be used for comparing responders vs non-responders)
 
-data = readtable('Source Data File.xlsx');
+data = readtable('Your File Name.xlsx');
 data = data(data.category_response_1_or_non_response_0_or_unknown_2 == 0 | data.category_response_1_or_non_response_0_or_unknown_2 == 1, :); % analyzing Responders & Non-Responders data
 data.Group = categorical(data.(data.Properties.VariableNames{1}));  % Categorical Variable
 
