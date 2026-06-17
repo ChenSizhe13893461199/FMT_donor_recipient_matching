@@ -35,4 +35,4 @@ The framework incorporates L2-regularization, randomized dropout (15-20%), and d
 
 #### Additional Notes:
 
-For the metadata of the 2 newly released FMT cohorts, please see guidance at https://zenodo.org/records/20724944.
+For accessing the metadata of the 2 newly released FMT cohorts, please see guidance at https://zenodo.org/records/20724944.
